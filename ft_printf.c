@@ -20,7 +20,10 @@ int escribir(t_tab *tab)
     while (tab->cpy[tab->i] != '\0')
     {
         if (tab->cpy[tab->i] == '%')
+         {  
+            reiniciar(tab);
             tratar(tab);
+         }
         else
         { 
             write(1, &tab->cpy[tab->i], 1);   
@@ -52,7 +55,5 @@ int     ft_printf(const char *format,...)
 
 int main(void)
 {
-
-    ft_printf("hola %d", 6203);
-   
+    ft_printf("hola tengo %d %s y %d peras si las vendo me dan %d euros \n %s", 6 ,"manzanas", 5, 10, "holis");  
 }
