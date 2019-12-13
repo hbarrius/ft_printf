@@ -15,6 +15,7 @@
 int   tratar(t_tab *tab)
 {
     tab->i++;
+    searchflag(tab);
     searchident(tab);
     select_print(tab);
     return(tab->len);

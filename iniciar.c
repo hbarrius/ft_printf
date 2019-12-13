@@ -20,5 +20,7 @@ t_tab   *iniciar(t_tab *tab)
     tab->cpy = (char*)tab->format;
     tab->trat = (char*)tab->format;
     tab->searchident = "dsx%";
+    tab->searchflag = "-+0 "
+    tab->flags = {'\0','\0','\0','\0','\0'};
     return (tab);
 }

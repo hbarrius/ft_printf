@@ -15,12 +15,12 @@
 
 t_tab   *select_print(t_tab *tab)
 {
-    char    flag;
+    char    ident;
 
-    flag = tab->flag_ident;
-    if (flag == 'd')
+    ident = tab->flag_ident;
+    if (ident == 'd')
         print_d(tab);
-    else if (flag == 's')
+    else if (ident == 's')
         print_s(tab);
     return (tab);
 }

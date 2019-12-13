@@ -15,5 +15,6 @@
 t_tab   *reiniciar(t_tab *tab)
 {
     tab->flag_ident = '\0';
+    tab->flag_aux = '\0';
     return(tab);
 }
