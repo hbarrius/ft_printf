@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tratar.c                                           :+:      :+:    :+:   */
+/*   pruebas.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/11 18:20:31 by hbarrius          #+#    #+#             */
-/*   Updated: 2019/12/11 18:50:32 by hbarrius         ###   ########.fr       */
+/*   Created: 2019/12/15 17:48:08 by marvin            #+#    #+#             */
+/*   Updated: 2019/12/15 17:48:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <stdio.h>
 
-int   tratar(t_tab *tab)
+void    main(void)
 {
-    tab->i++;
-    searchflag(tab);
-    searchwide(tab);
-    searchprecision(tab);
-    searchident(tab);
-    select_print(tab);
-    return(tab->len);
+    printf("numero %7.2d, y el otro %+d \n", -5, 6);
+    printf("%");
 }

@@ -12,18 +12,25 @@
 
 #include "ft_printf.h"
 
-t_tab   searchflags (t_tab *tab)
+t_tab   searchflag (t_tab *tab)
 {
     size_t  i;
 
-    i = 0;
-    while(tab->searchflag[i] != '\0')
+    while (tab->trat[tab->i] == '-' || tab->trat[tab->i] == '+' ||
+     tab->trat[tab->i] == '0' || tab->trat[tab->i] == ' ' || 
+     tab->trat[tab->i] == '.')
     {
-        if(tab->searchflag[i] == tab->trat[tab->i])
+        i = 0;
+        while(tab->searchflag[i] != '\0')
         {
-            tab->flag_aux = tab->searchflag[i];
+            if(tab->searchflag[i] == tab->trat[tab->i])
+            {
+                tab->flag_aux = tab->searchflag[i];
+                selectflag(tab);
+            }
+            i++;
         }
-        i++;
+        tab->i++;
     }
 }
 
@@ -40,5 +47,7 @@ t_tab selectflag (t_tab *tab)
         tab->flags[2] = 1;
     else if(strcmp(flag, ' ') == 0) 
         tab->flags[3] = 1;
+    else if(stcmp(flag,'.') == 0)
+        tab->flags[4] = 1;
     return (tab);
 }

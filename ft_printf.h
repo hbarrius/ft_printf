@@ -26,13 +26,16 @@ typedef struct  s_tab
     int        i;
     int        precision;
     va_list    args;
-    int        wide;
+    int        precision;
     char       *cpy;
     char       *trat;
     char       *searchident;
     char       flag_ident;
+    char       flag_aux;
     char       *searchflag;
     char       flags[5];
+    int        numzeros;
+    int        numspace;
 }               t_tab;
 
 t_tab   *iniciar(t_tab *tab);

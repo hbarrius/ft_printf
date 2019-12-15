@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tratar.c                                           :+:      :+:    :+:   */
+/*   searchwide.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/11 18:20:31 by hbarrius          #+#    #+#             */
-/*   Updated: 2019/12/11 18:50:32 by hbarrius         ###   ########.fr       */
+/*   Created: 2019/12/15 18:41:51 by marvin            #+#    #+#             */
+/*   Updated: 2019/12/15 18:41:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include <ft_printf.h>
 
-int   tratar(t_tab *tab)
+t_tab   searchwide(t_tab *tab)
 {
-    tab->i++;
-    searchflag(tab);
-    searchwide(tab);
-    searchprecision(tab);
-    searchident(tab);
-    select_print(tab);
-    return(tab->len);
+    while (tab->trat[tab->i] >= 0 && tab->trat[tab->i] <= 9)
+    {
+        tab->precision *= 10;
+        tab->precision += tab->trat[tab->i];
+        tab->i++;
+    }
+    return (tab);
 }
