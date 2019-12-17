@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   pruebas.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/15 17:48:08 by marvin            #+#    #+#             */
-/*   Updated: 2019/12/15 17:48:08 by marvin           ###   ########.fr       */
+/*   Updated: 2019/12/17 23:03:02 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void    main(void)
+int    main(void)
 {
-    printf("numero %7.2d, y el otro %+d \n", -5, 6);
-    printf("%");
+    printf("numero %#X", 122312);
+    return (0);
 }

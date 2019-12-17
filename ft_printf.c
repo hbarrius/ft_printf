@@ -6,7 +6,7 @@
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 15:58:33 by hbarrius          #+#    #+#             */
-/*   Updated: 2019/12/11 15:58:33 by hbarrius         ###   ########.fr       */
+/*   Updated: 2019/12/17 22:53:18 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,14 @@ int escribir(t_tab *tab)
     while (tab->cpy[tab->i] != '\0')
     {
         if (tab->cpy[tab->i] == '%')
-         {  
+         {
             reiniciar(tab);
             tratar(tab);
          }
         else
-        { 
-            write(1, &tab->cpy[tab->i], 1);   
+        {
+            write(1, &tab->cpy[tab->i], 1);
+            tab->len++;
         }
         tab->i++;
     }
@@ -55,5 +56,7 @@ int     ft_printf(const char *format,...)
 
 int main(void)
 {
-    ft_printf("hola tengo %d %s y %d peras si las vendo me dan %d euros \n %s", 6 ,"manzanas", 5, 10, "holis");  
+    printf("d:%+3.7d\n", 1);
+    ft_printf("D:%+3.7d\n", 1);
+    return (0);
 }
