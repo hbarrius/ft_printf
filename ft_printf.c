@@ -6,7 +6,7 @@
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 15:58:33 by hbarrius          #+#    #+#             */
-/*   Updated: 2019/12/19 19:02:43 by hbarrius         ###   ########.fr       */
+/*   Updated: 2019/12/19 19:44:55 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,29 @@ int     ft_printf(const char *format,...)
 
 int main(void)
 {
-    printf("d:%-08dk\n", -2);
-    ft_printf("D:%-08dk\n", -2);
+    printf("####################################\n");
+    printf("d:%8dk\n", 2);
+    ft_printf("D:%8dk\n\n", 2);
+
+printf("####################################\n");
+    printf("d:%8.4dk\n", 2);
+    ft_printf("D:%8.4dk\n\n", 2);
+
+printf("####################################\n");
+    printf("d:%8.dk\n", 2);
+    ft_printf("D:%8.dk\n\n", 2);
+
+printf("####################################\n");
+    printf("d:%08.4dk\n", 2);
+    ft_printf("D:%08.4dk\n\n", 2);
+
+    printf("####################################\n");
+    printf("d:%08dk\n", 2);
+    ft_printf("D:%08dk\n\n", 2);
+
+    printf("####################################\n");
+    printf("d:%08.dk\n", 2);
+    ft_printf("D:%08.dk\n\n", 2);
+
     return (0);
 }
