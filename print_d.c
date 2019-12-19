@@ -36,8 +36,6 @@ static char  get_sign(t_tab *tab, int is_neg)
 		return ('+');
 	if (tmp[3] == ' ')
 		return (' ');
-	if (tmp[2] == '0' && tmp[0] != '-')
-		return ('0');
 	return ('\0');
 }
 
@@ -47,8 +45,6 @@ static t_tab	*logic_d(t_tab *tab, int num, int num_len, int align_left)
 	char	sign;
 	int		is_negative;
 
-	//printf("\nwide: %d\n", tab->wide);
-	//printf("\nprecison:%d\n", tab->precision);
 	is_negative = (num < 0) ? 1 : 0;
 	num *= (is_negative) ? -1 : 1;
 	sign = get_sign(tab, is_negative);
@@ -59,12 +55,11 @@ static t_tab	*logic_d(t_tab *tab, int num, int num_len, int align_left)
 		not_blank++;
 	tab->len += (not_blank <= tab->wide) ? tab->wide : not_blank;
 	//printf("\n\nresta: %d\n\n", (num_len - not_blank));
-	if (!align_left && tab->flags[2] == 'a')
+	if (!align_left)
 		print_aux(tab, ' ', tab->wide - not_blank, 0);
 	if (sign)
 		write(1, &sign, 1);
-	if (tab->flags[2] == '0')
-		print_aux(tab, '0', tab->wide - not_blank, 0);
+	print_aux(tab, '0', tab->precision - num_len, 0);
 	ft_putnbr_fd(num, 1);
 	if (align_left)
 		print_aux(tab, ' ', tab->wide - not_blank, 0);
