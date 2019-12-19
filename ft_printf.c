@@ -6,7 +6,7 @@
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 15:58:33 by hbarrius          #+#    #+#             */
-/*   Updated: 2019/12/17 22:53:18 by hbarrius         ###   ########.fr       */
+/*   Updated: 2019/12/19 14:52:05 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int     ft_printf(const char *format,...)
 
 int main(void)
 {
-    printf("d:%+3.7d\n", 1);
-    ft_printf("D:%+3.7d\n", 1);
+    printf("d:%+7dk\n", 1);
+    ft_printf("D:%+7dk\n", 1);
     return (0);
 }
