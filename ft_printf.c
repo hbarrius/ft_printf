@@ -6,7 +6,7 @@
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 15:58:33 by hbarrius          #+#    #+#             */
-/*   Updated: 2019/12/19 16:45:33 by hbarrius         ###   ########.fr       */
+/*   Updated: 2019/12/19 19:02:43 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ int     ft_printf(const char *format,...)
         tab->len = escribir(tab);
         va_end(tab->args);
     }
+    printf("\nwide: %d \n", tab->wide);
+    printf("\npre: %d \n",tab->precision);
     free(tab);
     return(tab->len);
 }
@@ -56,7 +58,7 @@ int     ft_printf(const char *format,...)
 
 int main(void)
 {
-    printf("d:%10.2dk\n", 1);
-    ft_printf("D:%10.2dk\n", 1);
+    printf("d:%-08dk\n", -2);
+    ft_printf("D:%-08dk\n", -2);
     return (0);
 }
