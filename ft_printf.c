@@ -6,7 +6,7 @@
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 17:40:21 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 17:40:31 by hbarrius         ###   ########.fr       */
+/*   Updated: 2020/01/09 21:08:23 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int escribir(t_tab *tab)
         }
         tab->i++;
     }
-    tab->len = tab->i;
+    
     return(tab->len);
 }
 
