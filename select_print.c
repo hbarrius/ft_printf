@@ -6,7 +6,7 @@
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 18:23:09 by hbarrius          #+#    #+#             */
-/*   Updated: 2019/12/11 21:01:43 by hbarrius         ###   ########.fr       */
+/*   Updated: 2020/01/09 17:24:21 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ t_tab   *select_print(t_tab *tab)
         print_c(tab);
     else if (ident == 'u')
         print_u(tab);
+    else if (ident == 'x')
+        print_x(tab);
     return (tab);
 }

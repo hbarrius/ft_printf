@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_s.c                                          :+:      :+:    :+:   */
+/*   print_u.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/11 20:44:38 by hbarrius          #+#    #+#             */
-/*   Updated: 2019/12/11 21:02:57 by hbarrius         ###   ########.fr       */
+/*   Created: 2020/01/09 17:48:05 by hbarrius          #+#    #+#             */
+/*   Updated: 2020/01/09 17:48:07 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	ft_putnbr(int num)
 t_tab   *print_u(t_tab *tab)
 {
     int num;
-    
+
     if (tab->flag_ident == 'u')
         num = (unsigned int)(va_arg(tab->args, unsigned int));
     ft_putnbr(num);
