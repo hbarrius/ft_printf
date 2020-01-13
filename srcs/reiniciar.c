@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tratar.c                                           :+:      :+:    :+:   */
+/*   reiniciar.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/11 18:20:31 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 17:51:12 by hbarrius         ###   ########.fr       */
+/*   Created: 2019/12/11 19:22:17 by hbarrius          #+#    #+#             */
+/*   Updated: 2020/01/13 18:07:44 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int   tratar(t_tab *tab)
+t_tab   *reiniciar(t_tab *tab)
 {
-    tab->i++;
-    searchflag(tab);
-    searchwide(tab);
-    searchprecision(tab);
-    searchident(tab);
-    select_print(tab);
-    return(tab->len);
+    tab->flag_ident = '\0';
+    tab->flag_aux = '\0';
+    tab->flags[0] = '\0';
+    tab->flags[1] = '\0';
+    tab->flags[2] = '\0';
+    tab->flags[3] = '\0';
+    tab->flags[4] = '\0';
+    tab->wide = 0;
+    tab->precision = -1;
+    return(tab);
 }
