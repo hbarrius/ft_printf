@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   select_print.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbalboa- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 18:23:09 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 17:24:21 by hbarrius         ###   ########.fr       */
+/*   Updated: 2020/01/13 18:59:57 by dbalboa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <string.h>
 
 t_tab   *select_print(t_tab *tab)
 {
@@ -24,9 +23,7 @@ t_tab   *select_print(t_tab *tab)
         print_s(tab);
     else if (ident == 'c')
         print_c(tab);
-    else if (ident == 'u')
-        print_u(tab);
-    else if (ident == 'x')
+    else if (ident == 'x' || ident == 'X')
         print_x(tab);
     return (tab);
 }

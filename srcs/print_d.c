@@ -1,13 +1,13 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   print_d.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 17:47:42 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 17:47:45 by hbarrius         ###   ########.fr       */
-/*                                                                            */
+/*																			*/
+/*														:::	  ::::::::   */
+/*   print_d.c										  :+:	  :+:	:+:   */
+/*													+:+ +:+		 +:+	 */
+/*   By: dbalboa- <marvin@42.fr>					+#+  +:+	   +#+		*/
+/*												+#+#+#+#+#+   +#+		   */
+/*   Created: 2019/12/11 18:29:42 by hbarrius		  #+#	#+#			 */
+/*   Updated: 2019/12/17 20:12:46 by dbalboa-		 ###   ########.fr	   */
+/*																			*/
 /* ************************************************************************** */
 
 #include "ft_printf.h"
@@ -55,8 +55,6 @@ static t_tab	*logic_d(t_tab *tab, int num, int num_len, int align_left)
 		not_blank++;
 	tab->len += (not_blank <= tab->wide) ? tab->wide : not_blank;
 	//printf("\n\nresta: %d\n\n", (num_len - not_blank));
-	
-
 	if (!align_left && (tab->flags[2] != '0' || tab->precision >= 0 ))
 		print_aux(tab, ' ', tab->wide - not_blank, 0);
 	else if (tab->flags[2] == '0' && tab->precision < 0)

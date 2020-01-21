@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iniciar.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 17:40:55 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 17:40:55 by hbarrius         ###   ########.fr       */
+/*   Created: 2019/12/05 18:55:37 by marvin            #+#    #+#             */
+/*   Updated: 2019/12/05 18:55:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_tab   *iniciar(t_tab *tab)
     tab->wide = 0;
     tab->cpy = (char*)tab->format;
     tab->trat = (char*)tab->format;
-    tab->searchident = "dsciu%";
+    tab->searchident = "dsciux%";
     tab->searchflag = "-+0 ";
     tab->flags[0] = 'a';
     tab->flags[1] = 'a';

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_x.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbalboa- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 18:15:35 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/13 18:21:16 by hbarrius         ###   ########.fr       */
+/*   Updated: 2020/01/13 21:09:15 by dbalboa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static t_tab    *logic_x(t_tab *tab, int num, char *str, int align)
     int num_w;
 
     if ((num_w = ft_strlen(str)) && tab->flags[4] == '#' && num &&
-     tab->flags[3] == '0' && tab->wide)
+     tab->flags[2] == '0' && tab->wide)
         num_w += 2;
     else if ((num_w = ft_strlen(str)) && tab->flags[4] == '#' && num)
     {
@@ -41,8 +41,11 @@ static t_tab    *logic_x(t_tab *tab, int num, char *str, int align)
     if(!align)
         print_aux(tab, ' ', tab->wide - num_b, 0);
     hashtag(num, tab->flags[4], tab->flag_ident);
-    print_aux(tab, '0', tab->precision - num_w, 0);
-    ft_putstr(str);
+    if (tab->flags[2] == '0' && tab->precision < 0)
+        print_aux(tab, '0', tab->wide - num_b, 0);
+    else
+        print_aux(tab, '0', tab->precision - num_w, 0);
+    ft_putstr_fd(str, 1);
     if(align)
         print_aux(tab, ' ', tab->wide - num_b, 0);
     return (tab);
@@ -65,16 +68,16 @@ t_tab   *print_x(t_tab *tab)
     int     align;
 
     align = 0;
-    num = (unsigned int)(va_arg(tab->args, unsigned int));
+    num = (int)(va_arg(tab->args, int));
 
     if (num == 0 && tab->precision == 0)
     {
         print_aux(tab, ' ', tab->wide, 1);
         return (tab);
     }
-    c = 'a';
-    if (tab->flag_ident == 'X')
-        c = 'A';
+    c = 'A';
+    if (tab->flag_ident == 'x')
+        c = 'a';
     if (!(str = ft_itoa_base(num, 16, c)))
         exit(-1);
     if (tab->flags[0] == '-')

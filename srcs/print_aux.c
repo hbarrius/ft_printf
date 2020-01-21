@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   print_aux.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbalboa- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 17:41:12 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 17:41:14 by hbarrius         ###   ########.fr       */
+/*   Created: 2019/12/17 18:55:09 by dbalboa-          #+#    #+#             */
+/*   Updated: 2020/01/09 20:03:37 by dbalboa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft-/libft.h"
 
 void	print_aux(t_tab *tab, char c, int len, int update_len)
 {

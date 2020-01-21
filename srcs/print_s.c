@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbalboa- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 17:47:54 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 17:47:56 by hbarrius         ###   ########.fr       */
+/*   Created: 2019/12/11 20:44:38 by hbarrius          #+#    #+#             */
+/*   Updated: 2020/01/09 20:47:30 by dbalboa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 char	*ft_strndup(const char *s1, size_t n)
 {
-	char		*str_copy;
-	size_t		i;
+	char	*s2;
+	size_t	i;
 
-	str_copy = malloc(sizeof(char) * (n + 1));
-	if (str_copy == NULL)
-		return (NULL);
 	i = 0;
-	while (i < n)
+	if (!(s2 = ft_strnew(n)))
+		return (NULL);
+	while (s1[i] && i < n)
 	{
-		str_copy[i] = s1[i];
+		s2[i] = s1[i];
 		i++;
 	}
-	str_copy[i] = '\0';
-	return (str_copy);
+	return (s2);
 }
 
 t_tab   *print_s(t_tab *tab)
@@ -43,9 +41,9 @@ t_tab   *print_s(t_tab *tab)
     else if (tab->precision == -1 && str)
         str = ft_strdup(str);
     else if (tab->precision > -1 && !str)
-        str = ft_strndup("\0", tab->precision);
+        str = ft_strndup("(null)", tab->precision);
     else if (tab->precision == -1 && !str)
-        str = ft_strdup("\0");
+        str = ft_strdup("(null)");
     len = ft_strlen(str);
     tab->len += len;
     if (tab->flags[2] == '0' && tab->flags[0] != '-')

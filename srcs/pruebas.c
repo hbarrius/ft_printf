@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   pruebas.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbalboa- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/15 17:48:08 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/09 18:13:31 by hbarrius         ###   ########.fr       */
+/*   Created: 2020/01/13 19:21:32 by dbalboa-          #+#    #+#             */
+/*   Updated: 2020/01/13 19:22:31 by dbalboa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int    main(void)
+int main()
 {
-    printf("numero %#6.5x", 21323);
-    return (0);
+	printf("%x\n", -8000);
+
 }

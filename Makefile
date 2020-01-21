@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+         #
+#    By: dbalboa- <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/09 19:51:55 by dbalboa-          #+#    #+#              #
-#    Updated: 2020/01/13 18:49:22 by hbarrius         ###   ########.fr        #
+#    Updated: 2020/01/13 19:04:54 by dbalboa-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFT_H = 	-I srcs/libft/includes
 
 OBJ_DIR =	obj/
 SRC_DIR =	srcs/
-LIB_DIR =	srcs/libft-/
+LIB_DIR =	srcs/libft/
 
 CFILE =		ft_printf.c \
 			iniciar.c \
@@ -35,6 +35,7 @@ CFILE =		ft_printf.c \
 			print_d.c \
 			print_s.c \
 			print_u.c \
+			print_x.c \
 			print_aux.c \
 			ft_printf.h \
 

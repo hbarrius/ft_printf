@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbalboa- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 17:40:21 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 21:08:23 by hbarrius         ###   ########.fr       */
+/*   Created: 2019/12/11 15:58:33 by hbarrius          #+#    #+#             */
+/*   Updated: 2020/01/09 20:50:41 by dbalboa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,10 @@ int escribir(t_tab *tab)
         }
         tab->i++;
     }
-    
     return(tab->len);
 }
 
-int     ft_printf(const char *format,...)
+int     ft_printf(const char *format, ...)
 {
     t_tab *tab;
 
@@ -45,7 +44,7 @@ int     ft_printf(const char *format,...)
     iniciar(tab);
     if (format)
     {
-        va_start(tab->args,format);
+        va_start(tab->args, format);
         tab->len = escribir(tab);
         va_end(tab->args);
     }
@@ -55,12 +54,27 @@ int     ft_printf(const char *format,...)
     return(tab->len);
 }
 
+/*
+ * Lo que llevamos hecho:
+ *
+ * %c = HECHO
+ * %s = HECHO
+ * %p = 
+ * %d = HECHO
+ * %i = HECHO
+ * %u = HECHO
+ * %x =
+ * %X =
+ *
+ */
+/*
 
 int main(void)
 {
     printf("####################################\n");
-    printf("s:%s\n", "holaa");
-    ft_printf("S:%s\n", "holaa");
+    printf("hello, %s.\n", NULL);
+    ft_printf("HELLO, %s.\n", NULL);
 
     return (0);
 }
+*/

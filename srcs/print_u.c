@@ -3,51 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   print_u.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbalboa- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 17:48:05 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/09 17:48:07 by hbarrius         ###   ########.fr       */
+/*   Created: 2019/12/11 20:44:38 by hbarrius          #+#    #+#             */
+/*   Updated: 2020/01/09 19:08:57 by dbalboa-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <string.h>
 
-static void	ft_putnbr(int num)
+static int			get_tens(int num)
 {
-	int count;
-	int pot;
-	count = num;
-	pot = 1;
-  if (count < 0)
-    count = count - 4294967295;
-	while (count > 9)
-	{
-		count = (count / 10);
-		pot = pot * 10;
-	}
-	while (pot >= 1)
-	{
-		if(num /pot < 0)
-		{
-		count = (num / pot) * -1 + '0';
-		}
-		else
-		{
-			count = (num / pot) + '0';
-		}
-			write(1, &count, 1);
-			num = (num % pot);
-			pot = (pot / 10);
-	}
+	int tens;
+
+	tens = 1;
+	while ((num /= 10) > 0)
+		tens++;
+	return (tens);
 }
 
-t_tab   *print_u(t_tab *tab)
+static t_tab		*logic_u(t_tab *tab, int num, int length, int flag)
 {
-    int num;
+	int			not_blank;
 
-    if (tab->flag_ident == 'u')
-        num = (unsigned int)(va_arg(tab->args, unsigned int));
-    ft_putnbr(num);
-    return (tab);
+	not_blank = length;
+	if (length <= tab->precision)
+		not_blank = tab->precision;
+	tab->len += (not_blank <= )
+}
+
+t_tab				*print_u(t_tab *tab)
+{
+	int		length;
+	int		flag;
+	int		num;
+
+	flag = 0;
+	num = (unsigned int)(va_arg(tab->args, unsigned int));
+	if (num == 0 && tab->precision == 0)
+	{
+		display_gap(tab, ' ', tab->wide, 1);
+		return (tab);
+	}
+	length = get_tens(num);
+	if (tab->flags[0] == '-')
+		flag = 1;
+	if (tab->flags[2] == '0' && tab->precision == -1 && !tab->flags[0])
+		tab->precision = tab->wide;
+	logic_u(tab, num, length, flag);
+	return (tab);
 }
