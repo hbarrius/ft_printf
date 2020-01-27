@@ -6,7 +6,7 @@
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/11 15:58:33 by hbarrius          #+#    #+#             */
-/*   Updated: 2020/01/21 20:36:25 by hbarrius         ###   ########.fr       */
+/*   Updated: 2020/01/27 18:12:12 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,9 @@ int     ft_printf(const char *format, ...)
     if(!(tab = (t_tab*)malloc(sizeof(t_tab))))
         return (-1);
     tab->format = format;
+
     iniciar(tab);
+    
     if (format)
     {
         va_start(tab->args, format);

@@ -6,7 +6,7 @@
 /*   By: hbarrius <hbarrius@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/15 19:03:11 by marvin            #+#    #+#             */
-/*   Updated: 2019/12/19 19:51:57 by hbarrius         ###   ########.fr       */
+/*   Updated: 2020/01/27 20:07:35 by hbarrius         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,15 @@ t_tab   *searchprecision(t_tab *tab)
     {
         tab->i++;
         tab->precision = 0;
+    }
+    if (tab->trat[tab->i] == '*')
+    {
+        tab->precision = (int)(va_arg(tab->args, int));
+        if (tab->precision < 0)
+        {
+            tab->precision = -1;
+        }
+        tab->i++;
     }
     while (tab->trat[tab->i] >= '0' && tab->trat[tab->i] <= '9')
     {

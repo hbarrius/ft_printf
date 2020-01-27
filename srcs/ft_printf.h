@@ -36,8 +36,6 @@ typedef struct  s_tab
     char       flag_aux;
     char       *searchflag;
     char       flags[5];
-    int        numzeros;
-    int        numspace;
 }               t_tab;
 
 t_tab   *iniciar(t_tab *tab);
