@@ -16,7 +16,11 @@
 static int get_tens(int num)
 {
 	int tens;
-
+	if (num == INT32_MIN || num == INT32_MAX)
+	{	
+		tens = 10;
+		return (tens);
+	}
 	if (num < 0)
 		num *= -1;
 	tens = 1;
@@ -56,7 +60,7 @@ static t_tab	*logic_d(t_tab *tab, int num, int num_len, int align_left)
 	tab->len += (not_blank <= tab->wide) ? tab->wide : not_blank;
 	if (!align_left && (tab->flags[2] != '0' || tab->precision >= 0 ))
 		print_aux(tab, ' ', tab->wide - not_blank, 0);
-	if (sign)
+	if (sign && INT32_MAX != num && INT32_MIN != num)
 		write(1, &sign, 1);
 	if (tab->flags[2] == '0' && tab->precision < 0)
 		print_aux(tab, '0', tab->wide - not_blank, 0);
